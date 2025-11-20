@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biodata Mochammad Ibrohim Firdaus</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Roboto',sans-serif;transition:background 0.5s,color 0.5s;overflow-x:hidden;position:relative;}
+body.light{background:linear-gradient(135deg,#e0f7fa,#f0f4c3);color:#222;}
+body.dark{background:#1b1b2f;color:#eee;}
+a{text-decoration:none;color:inherit;}
+.container{max-width:1100px;margin:auto;padding:40px 20px;display:flex;flex-direction:column;gap:50px;position:relative;z-index:1;}
+
+/* Header Horizontal */
+.header-top{display:flex;align-items:center;gap:30px;flex-wrap:wrap;}
+.profile-pic{width:250px;height:auto;overflow:hidden;transform:translateX(-100%);animation:slideInLeft 1s forwards;}
+.profile-pic img{width:100%;height:auto;object-fit:cover;border-radius:15px;box-shadow:0 10px 25px rgba(0,0,0,0.2);}
+.header-text{flex:1;min-width:250px;opacity:0;transform:translateX(100%);animation:fadeInRight 1s forwards 0.5s;}
+.header-text h1{font-size:2.7em;margin-bottom:15px;color:#00acc1;}
+.header-text p{font-size:1.1em;line-height:1.6;color:#555;}
+
+/* Section */
+section{display:flex;flex-direction:column;gap:15px;}
+section h3{font-size:1.6em;border-bottom:2px solid #00acc1;padding-bottom:5px;width:fit-content;position:relative;}
+ul{list-style:none;display:flex;flex-wrap:wrap;gap:15px;}
+ul li{background:#80deea;padding:10px 15px;border-radius:15px;transition:transform 0.3s,background 0.3s;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,0.1);}
+ul li:hover{transform:scale(1.1);background:#00acc1;color:#fff;}
+.cards{display:flex;flex-direction:column;gap:20px;}
+.card{background:rgba(255,255,255,0.15);padding:20px;border-radius:20px;transition:transform 0.4s,background 0.4s,box-shadow 0.3s;position:relative;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,0.1);}
+.card:hover{transform:translateY(-15px) scale(1.05);background:rgba(255,255,255,0.25);box-shadow:0 12px 25px rgba(0,0,0,0.2);}
+
+/* Animasi Header */
+@keyframes slideInLeft{0%{transform:translateX(-100%);}100%{transform:translateX(0);}}
+@keyframes fadeInRight{0%{opacity:0;transform:translateX(100%);}100%{opacity:1;transform:translateX(0);}}
+
+/* Robot Humanoid Fixed - Super Realistic Idle */
+.robot-container{position:fixed;bottom:20px;right:20px;width:180px;height:360px;z-index:0;pointer-events:none;}
+.robot{width:100%;height:100%;position:absolute;transform-origin:center bottom;transition:transform 0.2s;}
+.robot:hover{transform:scale(1.3) rotate(-10deg);pointer-events:auto;}
+.robot-idle{animation:idle-body 3s infinite ease-in-out, idle-head 4s infinite ease-in-out, hand-wave 2s infinite ease-in-out, blink 5s infinite;}
+
+@keyframes idle-body{0%,100%{transform:translateY(0) rotate(0deg);}25%{transform:translateY(-3px) rotate(1deg);}50%{transform:translateY(-5px) rotate(-1deg);}75%{transform:translateY(-3px) rotate(0.5deg);}}
+@keyframes idle-head{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-2px) rotate(2deg);}}
+@keyframes hand-wave{0%,100%{transform:rotate(0deg);}50%{transform:rotate(12deg);}}
+@keyframes blink{0%,90%,100%{opacity:1;}95%{opacity:0.1;}}
+
+/* Robot berjalan di pinggir dengan idle kecil */
+.walking-robot{position:fixed;width:80px;height:160px;pointer-events:none;}
+.walking-robot.left{left:-100px;top:30%;animation:walkSide 8s linear infinite alternate, idle-walk 4s infinite;}
+.walking-robot.right{right:-100px;top:60%;animation:walkSideRight 10s linear infinite alternate, idle-walk 4s infinite;}
+
+@keyframes walkSide{0%{left:-100px;}100%{left:20px;}}
+@keyframes walkSideRight{0%{right:-100px;}100%{right:20px;}}
+@keyframes idle-walk{0%,100%{transform:translateY(0);}50%{transform:translateY(-5px);}}
+
+.toggle-btn{position:fixed;top:20px;right:20px;background:#00acc1;color:#fff;border:none;padding:12px 18px;border-radius:12px;cursor:pointer;font-weight:bold;z-index:10;transition:transform 0.2s;}
+.toggle-btn:hover{transform:scale(1.1);}
+
+/* Fade-in saat scroll */
+.fade-in{opacity:0;transform:translateY(30px);transition:all 0.8s ease-out;}
+.fade-in.show{opacity:1;transform:translateY(0);}
+
+/* Kontak Footer */
+footer{margin-top:50px;padding-top:20px;border-top:2px solid #00acc1;display:flex;flex-direction:column;gap:10px;}
+footer a{display:inline-block;margin-right:10px;background:#4dd0e1;padding:10px 15px;border-radius:12px;transition:transform 0.3s,background 0.3s;box-shadow:0 4px 10px rgba(0,0,0,0.1);}
+footer a:hover{transform:translateY(-5px);background:#00acc1;}
+
+@media(max-width:900px){.header-top{flex-direction:column;align-items:center;text-align:center;}.header-text{animation:none;opacity:1;transform:translateX(0);}}
+</style>
+</head>
+<body class="light">
+
+<button class="toggle-btn" onclick="toggleMode()">Mode Gelap/Terang</button>
+
+<div class="container">
+  <!-- Header horizontal -->
+  <div class="header-top">
+    <div class="profile-pic">
+      <img src="/mnt/data/IMG_8255.JPG" alt="Foto Mochammad Ibrohim Firdaus">
+    </div>
+    <div class="header-text">
+      <h1>Mochammad Ibrohim Firdaus</h1>
+      <p>Halo! Saya mahasiswa Teknik Otomasi yang tertarik pada inovasi teknologi, otomasi industri, dan pengembangan organisasi. Saya selalu bersemangat mengikuti kegiatan yang menantang.</p>
+    </div>
+  </div>
+
+  <section class="fade-in">
+    <h3>Pendidikan</h3>
+    <ul>
+      <li>SD Negeri 8</li>
+      <li>SMP Negeri 37</li>
+      <li>SMA Negeri 7</li>
+    </ul>
+  </section>
+
+  <section class="fade-in">
+    <h3>Pengalaman Organisasi</h3>
+    <div class="cards">
+      <div class="card">Staff Magang Kementrian Sosial Politik Kabinet Gana Optima</div>
+      <div class="card">Staff Ahli Kementrian Sosial Politik Kabinet Nahkoda Akselerasi</div>
+      <div class="card">Paguyuban Pemandu PPNS 2025</div>
+    </div>
+  </section>
+
+  <section class="fade-in">
+    <h3>Pengalaman Kepanitiaan</h3>
+    <div class="cards">
+      <div class="card">Sie Perkap LKMM TD 2024</div>
+      <div class="card">Sie Komdis Rudder 2025</div>
+      <div class="card">Sie Perkap Nautical Fest 2025</div>
+      <div class="card">Sie Perkap Ships Reperation 2024</div>
+    </div>
+  </section>
+
+  <!-- Kontak Footer -->
+  <footer class="fade-in">
+    <h3>Kontak</h3>
+    <div>
+      <a href="https://instagram.com/ibrohim_firdaus" target="_blank">Instagram</a>
+      <a href="mailto:mochammadibrohimf@gmail.com">Email</a>
+    </div>
+  </footer>
+</div>
+
+<!-- Robot Humanoid Fixed -->
+<div class="robot-container">
+  <img class="robot robot-idle" src="https://img.icons8.com/ios/200/00acc1/robot-android.png" alt="robot humanoid full body">
+</div>
+
+<!-- Robot berjalan di pinggir -->
+<img class="walking-robot left" src="https://img.icons8.com/
